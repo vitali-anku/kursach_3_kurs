@@ -8,34 +8,42 @@
     <artifactId>AVG.server</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <spring-core.version>5.0.5.RELEASE</spring-core.version>
-        <spring-webmvc.version>5.0.5.RELEASE</spring-webmvc.version>
+        <spring.version>5.0.5.RELEASE</spring.version>
         <javax.servlet-api.version>4.0.0</javax.servlet-api.version>
         <spring-data-jpa.version>2.0.6.RELEASE</spring-data-jpa.version>
-        <hibernate-entitymanager.version>5.3.0.CR1</hibernate-entitymanager.version>
+        <hibernate.version>5.3.0.CR1</hibernate.version>
         <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
         <commons-dbcp2.version>2.2.0</commons-dbcp2.version>
+        <jta.version>1.1</jta.version>
+        <jackson-databind.version>2.9.5</jackson-databind.version>
     </properties>
-    <packaging>war</packaging>
+    <!--<packaging>war</packaging>-->
 
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${spring-core.version}</version>
+            <version>${spring.version}</version>
         </dependency>
 
         <!--Web-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${spring-webmvc.version}</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>${javax.servlet-api.version}</version>
             <scope>provided</scope>
+        </dependency>
+
+        <!--JSON Converter-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
         </dependency>
 
 
@@ -48,7 +56,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate-entitymanager.version}</version>
+            <version>${hibernate.version}</version>
         </dependency>
         <dependency>
             <groupId>postgresql</groupId>
@@ -59,6 +67,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
             <version>${commons-dbcp2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>${jta.version}</version>
         </dependency>
     </dependencies>
 
